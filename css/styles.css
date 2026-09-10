@@ -1,0 +1,847 @@
+/* ===================================================
+   SISTEMA VISUAL: PAPALLACTA TERMAL & ANDES
+   Paleta: Bosque de Páramo, Turquesa Volcánico y Piedra
+   =================================================== */
+:root {
+  --andes-dark: #0b291e;
+  --andes-surface: #134332;
+  --teal-mineral: #0d9488;
+  --teal-glow: #2dd4bf;
+  --mist-light: #f4f7f6;
+  --card-white: #ffffff;
+  --text-lead: #11221b;
+  --text-muted: #4e6359;
+  --line-soft: #d3dfd9;
+  
+  --shadow-subtle: 0 4px 18px rgba(11, 41, 30, 0.05);
+  --shadow-hover: 0 16px 36px rgba(11, 41, 30, 0.12);
+
+  --round-sm: 6px;
+  --round-box: 16px;
+  --round-pill: 999px;
+  --font-base: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--mist-light);
+  color: var(--text-lead);
+  line-height: 1.65;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+.main-wrapper {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* NAVEGACIÓN ESTÁNDAR LIMPIA */
+.top-navigation-bar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line-soft);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-identity img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.brand-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title-group strong {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--andes-dark);
+  letter-spacing: -0.3px;
+}
+
+.brand-title-group span {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--teal-mineral);
+  letter-spacing: 1px;
+}
+
+.nav-standard-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-standard-item {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: var(--round-pill);
+  transition: all 0.2s ease;
+}
+
+.nav-standard-item:hover,
+.nav-standard-item.is-current {
+  color: var(--andes-dark);
+  background-color: rgba(13, 148, 136, 0.12);
+}
+
+/* BOTONES */
+.btn-primary-teal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--teal-mineral);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 13px 26px;
+  border-radius: var(--round-sm);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-primary-teal:hover {
+  background-color: #0b7a70;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(13, 148, 136, 0.35);
+}
+
+.btn-outline-frost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 13px 26px;
+  border-radius: var(--round-sm);
+  transition: all 0.25s ease;
+}
+
+.btn-outline-frost:hover {
+  background: #ffffff;
+  color: var(--andes-dark);
+}
+
+/* HERO ASIMÉTRICO (SPLIT GRID) */
+.hero-andes {
+  position: relative;
+  min-height: 85vh;
+  background: 
+    linear-gradient(90deg, rgba(11, 41, 30, 0.92) 0%, rgba(11, 41, 30, 0.72) 55%, rgba(11, 41, 30, 0.88) 100%),
+    url('../images/hero.webp') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.hero-two-columns {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.hero-badge-pill {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--teal-glow);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.hero-main-title {
+  font-size: clamp(2.3rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero-main-title span {
+  color: var(--teal-glow);
+}
+
+.hero-lead-text {
+  font-size: 1.08rem;
+  color: #d1fae5;
+  margin-bottom: 34px;
+  max-width: 580px;
+}
+
+.hero-button-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* FICHA TÉCNICA CLIMÁTICA EN EL HERO */
+.climate-slate-panel {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--round-box);
+  padding: 34px 28px;
+}
+
+.climate-slate-panel h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.climate-stat-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+
+.climate-stat-line:last-child {
+  margin-bottom: 0;
+}
+
+.stat-descriptor {
+  font-size: 0.8rem;
+  color: #a7f3d0;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.stat-numeric {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* CABECERAS DE PÁGINAS INTERNAS */
+.page-banner-andes {
+  background: linear-gradient(135deg, var(--andes-dark) 0%, var(--andes-surface) 100%);
+  color: #ffffff;
+  padding: 70px 0;
+  text-align: center;
+}
+
+.page-banner-andes h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  margin: 8px 0 12px 0;
+}
+
+.page-banner-andes p {
+  color: #ccfbf1;
+  max-width: 660px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+.section-tagline {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--teal-mineral);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.section-primary-heading {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--andes-dark);
+}
+
+/* HOME: ATRACTIVOS DESTACADOS */
+.featured-home-section {
+  padding: 90px 0;
+}
+
+.featured-three-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin: 50px 0;
+}
+
+.featured-clean-card {
+  background: var(--card-white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--round-box);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;
+}
+
+.featured-clean-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-top-image {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-top-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-pill-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(11, 41, 30, 0.85);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--round-sm);
+}
+
+.card-inner-text {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-inner-text h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--andes-dark);
+  margin-bottom: 8px;
+}
+
+.card-inner-text p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.card-link-action {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--teal-mineral);
+}
+
+/* BANNER CTA */
+.andes-cta-strip {
+  background: var(--andes-dark);
+  color: #ffffff;
+  padding: 42px;
+  border-radius: var(--round-box);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.andes-cta-strip h3 {
+  font-size: 1.55rem;
+  margin-bottom: 6px;
+}
+
+.andes-cta-strip p {
+  color: #a7f3d0;
+}
+
+/* PÁGINA 2: LUGARES TURÍSTICOS (TIRAS HORIZONTALES) */
+.places-directory-section {
+  padding: 85px 0;
+}
+
+.horizontal-places-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.horizontal-place-card {
+  background: var(--card-white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--round-box);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.25s ease;
+}
+
+.horizontal-place-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.place-image-frame {
+  height: 100%;
+  min-height: 240px;
+  position: relative;
+}
+
+.place-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.place-altitude-chip {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(11, 41, 30, 0.85);
+  color: var(--teal-glow);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--round-sm);
+}
+
+.place-detail-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.place-detail-content h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--andes-dark);
+  margin-bottom: 4px;
+}
+
+.place-geo-reference {
+  font-size: 0.85rem;
+  color: var(--teal-mineral);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.place-narrative {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.place-highlight-activity {
+  background: #f0fdf4;
+  border-left: 3px solid var(--teal-mineral);
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  border-radius: 0 var(--round-sm) var(--round-sm) 0;
+}
+
+.place-highlight-activity strong {
+  color: var(--andes-dark);
+}
+
+.place-action-button {
+  align-self: flex-start;
+  padding: 9px 20px;
+  font-size: 0.85rem;
+}
+
+/* PÁGINA 3: SERVICIOS / PAQUETES TURÍSTICOS */
+.services-catalog-section {
+  padding: 85px 0;
+}
+
+.packages-clean-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
+}
+
+.package-item-card {
+  background: var(--card-white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--round-box);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-subtle);
+  position: relative;
+  transition: transform 0.25s ease;
+}
+
+.package-item-card:hover {
+  transform: translateY(-6px);
+}
+
+.package-item-card.is-featured {
+  border: 2px solid var(--teal-mineral);
+}
+
+.package-featured-flag {
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  background: var(--teal-mineral);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 12px;
+  border-radius: var(--round-sm);
+  text-transform: uppercase;
+}
+
+.package-type-header {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--teal-mineral);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.package-item-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--andes-dark);
+  margin-bottom: 14px;
+}
+
+.package-rate {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--andes-dark);
+  margin-bottom: 14px;
+}
+
+.package-rate span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.package-summary {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.package-bullet-list {
+  margin-bottom: 24px;
+}
+
+.package-bullet-list li {
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  padding-left: 18px;
+  position: relative;
+  color: var(--text-lead);
+}
+
+.package-bullet-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--teal-mineral);
+  font-weight: 800;
+}
+
+/* PÁGINA 4: NOSOTROS */
+.about-heritage-section {
+  padding: 85px 0;
+}
+
+.heritage-story-block {
+  max-width: 840px;
+  margin: 0 auto 60px auto;
+  background: var(--card-white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--round-box);
+  padding: 40px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.heritage-story-block h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--andes-dark);
+  margin-bottom: 14px;
+}
+
+.heritage-story-block p {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.pillars-three-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.pillar-box {
+  background: var(--card-white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--round-box);
+  padding: 30px;
+}
+
+.pillar-box h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--andes-dark);
+  margin-bottom: 10px;
+}
+
+.pillar-box p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.reasons-sub-panel {
+  background: var(--card-white);
+  border-top: 1px solid var(--line-soft);
+  padding: 85px 0;
+}
+
+.reasons-four-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.reason-card-item {
+  background: var(--mist-light);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--round-box);
+  padding: 26px;
+}
+
+.reason-card-item strong {
+  color: var(--teal-mineral);
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.reason-card-item h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--andes-dark);
+  margin-bottom: 8px;
+}
+
+.reason-card-item p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* PÁGINA 5: CONTACTO / RESERVA (100% HTML5) */
+.contact-modular-section {
+  padding: 85px 0;
+}
+
+.contact-layout-split {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.agency-info-tile {
+  background: var(--card-white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--round-box);
+  padding: 30px;
+  margin-bottom: 16px;
+}
+
+.agency-info-tile h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--andes-dark);
+  margin-bottom: 6px;
+}
+
+.agency-info-tile p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.contact-form-sheet {
+  background: var(--card-white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--round-box);
+  padding: 38px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.form-duo-row {
+  display: flex;
+  gap: 18px;
+}
+
+.field-container {
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.field-container label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--andes-dark);
+  margin-bottom: 6px;
+}
+
+.field-container input,
+.field-container select,
+.field-container textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--round-sm);
+  font-family: var(--font-base);
+  font-size: 0.9rem;
+  background: #fdfdfd;
+}
+
+.field-container input:focus,
+.field-container select:focus,
+.field-container textarea:focus {
+  outline: none;
+  border-color: var(--teal-mineral);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+
+/* FOOTER */
+.main-site-footer {
+  background: var(--andes-dark);
+  color: #94a39e;
+  padding: 70px 0 0 0;
+}
+
+.footer-tri-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 50px;
+  padding-bottom: 50px;
+}
+
+.footer-tri-grid h4, .footer-tri-grid h5 {
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.footer-tri-grid ul li {
+  margin-bottom: 8px;
+}
+
+.footer-tri-grid a:hover {
+  color: var(--teal-glow);
+}
+
+.footer-copyright-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav-layout {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .nav-standard-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-two-columns {
+    grid-template-columns: 1fr;
+  }
+  .horizontal-place-card {
+    grid-template-columns: 1fr;
+  }
+  .place-image-frame {
+    height: 220px;
+  }
+  .contact-layout-split {
+    grid-template-columns: 1fr;
+  }
+  .form-duo-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .footer-tri-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
