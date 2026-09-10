@@ -27,7 +27,7 @@ El portal implementa una arquitectura multipágina de 5 vistas enlazadas con nav
 ---
 
 ## Captura del Sitio
-![Vista previa de Termas Papallacta](images/hero.webp)
+![Vista previa de Termas Papallacta](images/preview.png)
 
 ---
 
