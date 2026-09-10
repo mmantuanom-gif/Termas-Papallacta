@@ -32,5 +32,5 @@ El portal implementa una arquitectura multipágina de 5 vistas enlazadas con nav
 ---
 
 ## Enlaces Oficiales del Proyecto
-* **URL del repositorio en GitHub:** [https://github.com/Melany-mantuano/Termas-Papallacta](https://github.com/Melany-mantuano/Termas-Papallacta)
-* **URL pública de GitHub Pages:** [https://melany-mantuano.github.io/Termas-Papallacta/](https://melany-mantuano.github.io/Termas-Papallacta/)
+* **URL del repositorio en GitHub:** [https://github.com/mmantuanom-gif/Termas-Papallacta.git](https://github.com/Melany-mantuano/Termas-Papallacta)
+* **URL pública de GitHub Pages:** [https://mmantuanom-gif.github.io/Termas-Papallacta/](https://mmantuanom-gif.github.io/Termas-Papallacta/)
